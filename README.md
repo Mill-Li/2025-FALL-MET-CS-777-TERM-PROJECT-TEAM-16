@@ -13,11 +13,12 @@ The expected outcome is an end-to-end big data analytics framework capable of ac
 ### Environment Setup
 This Step in the project requires no local environment setup. 
 
-All code runs in Databricks with the following environment:
+All code runs in the following environment:
 
-**Databricks Runtime**
-* Databricks Runtime:
-* Cluster Mode: Serverless - Environment Version 4
+**Databricks Serverless Notebook Compute**
+* Environment: Databricks Serverless Notebook Compute
+* Environment Version: 4
+* Apache Spark Version: 4.0.0
 * Language: Python(PySpark)
 
 **Required Library**
