@@ -116,7 +116,7 @@ Preprocessed Data is stored in ```.parquet``` format.
 - **mean_speed_calculated:** Total distance divided by duration (m/s), computed feature.
 
 ## Model Training, Evaluation, Prediction
-[Model Notebook](./TERM%20PROJECT/CODE/model.ipynb)
+[Model Notebook](./TERM%20PROJECT/CODE/Geolife_Mode_Classification.py)
 ### Environment Setup
 This Step in the project requires no local environment setup.
 
@@ -141,7 +141,7 @@ Input and Output are stored in the Google Cloud Storage Bucket.
 
 ### How to Run the Code
 1. Start an instance on GCP.
-2. Import the [notebook](./TERM%20PROJECT/CODE/model.ipynb) into the started instance.
+2. Import the [Python File](./TERM%20PROJECT/CODE/Geolife_Mode_Classification.py) into the started instance.
 3. Upload the [preprocessed data](./TERM%20PROJECT/RESULT/PREPROCESSED%20RESULT/) to the bucket.
 5. Changed the file path if required for both input and output.
 6. Run all cells
