@@ -93,7 +93,7 @@ Preprocessed Data is stored in ```.parquet``` format.
    * Merge with the provided mode data
 5. Trajectory Aggregation
    
-   Using PySpark:
+**Using PySpark:**
    * groupBy (user_id, traj_id, mode) or (user_id, traj_id)
    * Calculate descriptive statistics
    * Filter out invalid segments
