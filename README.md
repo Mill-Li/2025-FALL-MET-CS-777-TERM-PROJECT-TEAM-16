@@ -63,7 +63,7 @@ Points are described in the following lines, one for each line.
 * Field 6: Date as a string.
 * Field 7: Time as a string.
 
-Some of the users have a separate label.txt file that labels their trajectories with transportation mode.
+Some users have a separate ```label.txt``` file that labels their trajectories with transportation mode.
 
 **TXT Format:**
 
@@ -73,4 +73,14 @@ Line 1 is a header.
 * Field 3: Transportation Mode
 
 #### Preprocessed Data
-Preprocessed Data is stored in ```.parquet``` file.
+Preprocessed Data is stored in ```.parquet``` format.
+
+**Steps Taken for Preprocessing:**
+1. Load Raw Files
+   * Recursively load ```.plt``` files from directories
+   * Parse Timestamps and GPS points
+   * Assign Traj_id and User_id based on path
+2. Load Label Files
+   * Recursively load ```.txt``` files from directories
+   * Parse Timestamps
+   * Assign Traj_id and User_id based on path
