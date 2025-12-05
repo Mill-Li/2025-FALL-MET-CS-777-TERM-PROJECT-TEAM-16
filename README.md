@@ -127,14 +127,14 @@ All code runs in the Google Cloud Platform environment:
 * **Service:** GCP Compute & GCS bucket
 * **Machine Type:**
   * Machine type: n4-standard-4
-　  * vCPU: 4 vCPUs
- 　 * Memory: 16 GB RAM
-　  * Boot Disk: 200 GB SSD (Hyperdisk Balanced)
+    * vCPU: 4 vCPUs
+    * Memory: 16 GB RAM
+    * Boot Disk: 200 GB SSD (Hyperdisk Balanced)
   * Worker Node Configuration (× 2)
-  　* Machine type: n4-standard-4
- 　 * vCPU: 4 vCPUs
-　  * Memory: 16 GB RAM
-　  * Boot Disk: 200 GB SSD (Hyperdisk Balance
+    * Machine type: n4-standard-4
+    * vCPU: 4 vCPUs
+    * Memory: 16 GB RAM
+    * Boot Disk: 200 GB SSD (Hyperdisk Balance
 
 **Required Library**
 
