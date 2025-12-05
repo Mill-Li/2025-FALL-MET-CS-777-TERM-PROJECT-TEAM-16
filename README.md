@@ -9,7 +9,7 @@ The expected outcome is an end-to-end big data analytics framework capable of ac
 
 # Code Documentation
 ## Data Preprocessing
-[Open the preprocessing notebook](./TERM%20PROJECT/CODE/Data_Preprocessing.ipynb)
+[Preprocessing Notebook](./TERM%20PROJECT/CODE/Data_Preprocessing.ipynb)
 ### Environment Setup
 This Step in the project requires no local environment setup. 
 
@@ -116,6 +116,7 @@ Preprocessed Data is stored in ```.parquet``` format.
 - **mean_speed_calculated:** Total distance divided by duration (m/s), computed feature.
 
 ## Model Training, Evaluation, Prediction
+[Model Notebook](./TERM%20PROJECT/CODE/model.ipynb)
 ### Environment Setup
 This Step in the project requires no local environment setup.
 
