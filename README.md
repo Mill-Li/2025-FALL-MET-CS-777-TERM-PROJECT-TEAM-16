@@ -204,3 +204,5 @@ Input and Output are stored in the Google Cloud Storage Bucket.
    * Using seaborn and matplotlib to generate a visualization of the confusion matrix
 10. **Plot the Accuracy Comparison and F1 Score Comparison Seperately**
     * Using seaborn and matplotlib to generate a visualization for each comparison in a bar graph.
+11. **Plot the feature importance of the best model**
+    * Using matplotlib to generate a visualization for the feature importance of the best model.
