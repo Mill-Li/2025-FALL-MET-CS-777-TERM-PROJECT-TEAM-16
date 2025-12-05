@@ -76,28 +76,28 @@ Line 1 is a header.
 Preprocessed Data is stored in ```.parquet``` format.
 
 **Steps Taken for Preprocessing:**
-**1. Load Raw Files**
+1. **Load Raw Files**
    * Recursively load ```.plt``` files from directories
    * Parse Timestamps and GPS points
    * Assign Traj_id and User_id based on path
-**2. Load Label Files**
+2. **Load Label Files**
    * Recursively load ```.txt``` files from directories
    * Parse Timestamps
    * Assign Traj_id and User_id based on path
-**3. Feature Engineering**
+3. **Feature Engineering**
    * $\Delta$ t(Changing time between steps/records)
    * Haversine Distance between steps/records
    * Speed and Acceleration based on distance and time
    * Stop duration per steps/records
-**4. Mode Assignment**
+4. **Mode Assignment**
    * Merge with the provided mode data
-**5. Trajectory Aggregation**
+5. **Trajectory Aggregation**
 
    **Using PySpark:**
    * groupBy (user_id, traj_id, mode) or (user_id, traj_id)
    * Calculate descriptive statistics
    * Filter out invalid segments
-**6. Save Final Output as ```.parquet```**
+6. **Save Final Output as ```.parquet```**
 
 **Data Explanation**
 - **user_id:** Unique identifier for the user.
