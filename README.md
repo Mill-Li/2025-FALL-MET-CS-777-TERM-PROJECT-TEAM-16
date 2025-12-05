@@ -158,22 +158,49 @@ Input and Output are stored in the Google Cloud Storage Bucket.
 **Step Taken for Model Training and Evaluation:**
 1. **Load Preprocessed Data**
    * Read in ```.parquet``` files into pyspark dataframes
-1. **Feature Preprocessing and Standardization**
+2. **Feature Preprocessing and Standardization**
    * Clean all the features, including removing nulls and filtering invalid data
    * Encoding Categorical data
    * Feature vector assembly
    * Standardization for feature vector
-1. **Train/Test Data Split**
+3. **Train/Test Data Split**
    * Split the data into two datasets
      * 80% training
      * 20% testing
      * Random State = 42
-1. **Train & Evaluate Random Forest Model**
-   * Setup Random Forest Model
+4. **Train & Evaluate Random Forest Model**
+   * Set up Random Forest Model
      * numTrees = 200
      * maxDepth = 12
      * Random State = 42
    * Fit the model with the train data
    * Test the fitted model with the test data and generate a prediction list for evaluation
    * Evaluate the model using Accuracy and F1 scores.
-  
+5. **Train & Evaluate Logistic Regression Model**
+   * Set up Logistic Regression Model
+     * maxIter = 100
+     * regParam = 0.01
+     * L2
+   * Fit the model with the train data
+   * Test the fitted model with the test data and generate a prediction list for evaluation
+   * Evaluate the model using Accuracy and F1 scores.
+6. **Train & Evaluate Gradient Boost Tree Model**
+   * Set up Basic Gradient Boost Tree Model
+     * maxIter = 80
+     * maxDepth = 6
+     * stepSize = 0.1
+     * Random State = 42
+   * Set up One vs Rest since we have multiple features, as GBT only supports binary classification.
+   * Fit the one vs rest model with the train data
+   * Test the fitted model with the test data and generate a prediction list for evaluation
+   * Evaluate the model using Accuracy and F1 scores.
+7. **Build multiclass Confusion Matrix for models**
+   * Import MulticlassMetrics from pyspark.mllib.evaluation
+   * Create a self-defined function to create a Confusion Matrix
+   * Generate matrix for all three models
+8. **Cross Comparison on Accuracy and F1 Score**
+   * Simply build a pandas dataframe to print the result
+9. **Plot the Confusion Matrix for models**
+   * Using seaborn and matplotlib to generate a visualization of the confusion matrix
+10. **Plot the Accuracy Comparison and F1 Score Comparison Seperately**
+    * Using seaborn and matplotlib to generate a visualization for each comparison in a bar graph.
