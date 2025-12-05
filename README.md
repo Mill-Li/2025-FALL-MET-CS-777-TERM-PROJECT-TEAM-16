@@ -31,7 +31,7 @@ All required library is included in Databricks Runtime:
 Input and output data are stored in ```/Volumes/workspace/default/metcs777termproject``` in Databricks Free Edition
 
 ### How to Run the Code
-1. Import the Preprocessing Notebook into Databricks Workspace
+1. Import the [Preprocessing Notebook](./TERM%20PROJECT/CODE/Data_Preprocessing.ipynb) into Databricks Workspace
 2. Upload the required raw data onto Databricks Volume
 3. Change the file path if required for both input and output
 4. Run all cells with the serverless notebook compute
