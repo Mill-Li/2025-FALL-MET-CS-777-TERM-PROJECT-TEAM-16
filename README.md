@@ -55,19 +55,19 @@ Trajectory files are all in .plt format.
 Lines 1…6 are useless in this dataset and can be ignored. 
 
 Points are described in the following lines, one for each line.
-Field 1: Latitude in decimal degrees.
-Field 2: Longitude in decimal degrees.
-Field 3: All set to 0 for this dataset.
-Field 4: Altitude in feet (-777 if not valid).
-Field 5: Date - number of days (with fractional part) that have passed since 12/30/1899.
-Field 6: Date as a string.
-Field 7: Time as a string.
+* Field 1: Latitude in decimal degrees.
+* Field 2: Longitude in decimal degrees.
+* Field 3: All set to 0 for this dataset.
+* Field 4: Altitude in feet (-777 if not valid).
+* Field 5: Date - number of days (with fractional part) that have passed since 12/30/1899.
+* Field 6: Date as a string.
+* Field 7: Time as a string.
 
 Some of the users have a separate label.txt file that labels their trajectories with transportation mode.
 
 **TXT Format:**
 
 Line 1 is a header.
-Field 1: Start Time
-Field 2: End Time
-Field 3: Transportation Mode
+* Field 1: Start Time
+* Field 2: End Time
+* Field 3: Transportation Mode
