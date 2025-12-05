@@ -6,3 +6,19 @@ The primary objective of this term project is to design and implement a large-sc
 Using Apache Spark as the core computational platform, this project aims to develop a distributed machine learning pipeline for classifying different transportation modes based on spatiotemporal features, including speed, acceleration, altitude variation, and stop duration. Models including Random Forest, Gradient-Boosted Trees, and Logistic Regression will be implemented using Spark MLlib, enabling efficient processing and scalable classification of millions of GPS data points
 
 The expected outcome is an end-to-end big data analytics framework capable of accurately identifying transportation modes and visualizing their spatial distribution. This work contributes to real-world applications in urban mobility analysis, intelligent transportation systems, and smart city development, while demonstrating strong technical depth in big data processing and distributed machine learning.
+
+# Code Documentation
+## Data Preprocessing
+### Environment Setup
+This Step in the project requires no local environment setup. 
+
+All code runs in Databricks with the following environment:
+**Databricks Runtime**
+* Databricks Runtime:
+* Cluster Mode: Serverless - Environment Version 4
+* Language: Python(PySpark)
+**Required Library**
+All required library is included in Databricks Runtime:
+* PySpark
+**File Storage**
+Input
