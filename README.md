@@ -13,10 +13,12 @@ The expected outcome is an end-to-end big data analytics framework capable of ac
 This Step in the project requires no local environment setup. 
 
 All code runs in Databricks with the following environment:
+
 **Databricks Runtime**
 * Databricks Runtime:
 * Cluster Mode: Serverless - Environment Version 4
 * Language: Python(PySpark)
+
 **Required Library**
 All required library is included in Databricks Runtime:
 * PySpark
