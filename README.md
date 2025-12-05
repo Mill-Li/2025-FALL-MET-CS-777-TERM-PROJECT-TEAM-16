@@ -32,7 +32,7 @@ Input and output data are stored in ```/Volumes/workspace/default/metcs777termpr
 
 ### How to Run the Code
 1. Import the [Preprocessing Notebook](./TERM%20PROJECT/CODE/Data_Preprocessing.ipynb) into Databricks Workspace
-2. Upload the [raw data](./TERM%20PROJECT/DATA/) onto Databricks Volume
+2. Upload the [raw data](./TERM%20PROJECT/SAMPLE%20DATA/) onto Databricks Volume
 3. Change the file path if required for both input and output
 4. Run all cells with the serverless notebook compute
 5. Temporary Views would be generated throughout the steps
