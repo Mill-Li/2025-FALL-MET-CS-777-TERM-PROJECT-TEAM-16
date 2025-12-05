@@ -85,4 +85,4 @@ Preprocessed Data is stored in ```.parquet``` format.
    * Parse Timestamps
    * Assign Traj_id and User_id based on path
 3. Feature Engineering
-   * $\Delta$T
+   * $\Delta$ T
