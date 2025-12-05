@@ -100,17 +100,17 @@ Preprocessed Data is stored in ```.parquet``` format.
 7. Save Final Output as ```.parquet```
 
 **Data Explanation**
-- **user_id** — Unique identifier for the user.
-- **traj_id** — Unique identifier for the trajectory.
-- **mode** — Transportation mode label (e.g., walk, bike, drive).
-- **total_distance_m** — Total distance traveled in the trajectory (meters).
-- **max_speed** — Maximum speed observed.
-- **median_speed** — Median speed across the trajectory.
-- **var_speed** — Variance of speed across the trajectory.
-- **mean_accel** — Average acceleration.
-- **max_accel** — Maximum acceleration.
-- **stop_duration_seconds** — Total time stopped (seconds).
-- **start_time** — Timestamp of the first point in the segment.
-- **end_time** — Timestamp of the final point in the segment.
-- **duration_seconds** — Total duration of the trajectory (seconds).
-- **mean_speed_calculated** — Total distance divided by duration (m/s), computed feature.
+- **user_id:** Unique identifier for the user.
+- **traj_id:** Unique identifier for the trajectory.
+- **mode:** Transportation mode label (e.g., walk, bike, drive).
+- **total_distance_m:** Total distance traveled in the trajectory (meters).
+- **max_speed:** Maximum speed observed.
+- **median_speed:** Median speed across the trajectory.
+- **var_speed:** Variance of speed across the trajectory.
+- **mean_accel:** Average acceleration.
+- **max_accel:** Maximum acceleration.
+- **stop_duration_seconds:** Total time stopped (seconds).
+- **start_time:** Timestamp of the first point in the segment.
+- **end_time:** Timestamp of the final point in the segment.
+- **duration_seconds:** Total duration of the trajectory (seconds).
+- **mean_speed_calculated:** Total distance divided by duration (m/s), computed feature.
