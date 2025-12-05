@@ -48,7 +48,7 @@ Two output folders contain parquets generated:
 #### Raw Data
 The raw dataset contains 182 users' multiple trajectory files with GPS tracking points.
 
-Trajectory files are all in .plt format.
+Trajectory files are all in ```.plt``` format.
 
 **PLT Format:**
 
@@ -71,3 +71,6 @@ Line 1 is a header.
 * Field 1: Start Time
 * Field 2: End Time
 * Field 3: Transportation Mode
+
+#### Preprocessed Data
+Preprocessed Data is stored in ```.parquer``` file.
