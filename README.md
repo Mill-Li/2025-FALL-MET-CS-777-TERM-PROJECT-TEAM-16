@@ -23,8 +23,8 @@ All code runs in the following environment:
 
 **Required Library**
 
-All required library is included in Databricks Runtime:
-* PySpark
+All required library is included in the Databricks Serverless Notebook:
+* pyspark
 
 **File Storage**
 
@@ -32,7 +32,7 @@ Input and output data are stored in ```/Volumes/workspace/default/metcs777termpr
 
 ### How to Run the Code
 1. Import the [Preprocessing Notebook](./TERM%20PROJECT/CODE/Data_Preprocessing.ipynb) into Databricks Workspace
-2. Upload the [raw data](./TERM%20PROJECT/DATA/) onto Databricks Volume
+2. Upload the [raw data](./TERM%20PROJECT/DATA/) to Databricks Volume
 3. Change the file path if required for both input and output
 4. Run all cells with the serverless notebook compute
 5. Temporary Views would be generated throughout the steps
@@ -114,3 +114,43 @@ Preprocessed Data is stored in ```.parquet``` format.
 - **end_time:** Timestamp of the final point in the segment.
 - **duration_seconds:** Total duration of the trajectory (seconds).
 - **mean_speed_calculated:** Total distance divided by duration (m/s), computed feature.
+
+## Model Training, Evaluation, Prediction
+### Environment Setup
+This Step in the project requires no local environment setup.
+
+All code runs in the Google Cloud Platform environment:
+
+**Google Cloud Platform Environment**
+* **Platform:** Google Cloud Platform
+* **Service:**
+* **Machine Type:**
+
+**Required Library**
+
+Libraries are selected and installed when creating the instance.
+* pyspark
+* pandas
+* matplotlib
+* seaborn
+
+**File Storage**
+
+Input and Output are stored in the Google Cloud Storage Bucket.
+
+### How to Run the Code
+1. Start an instance on GCP.
+2. Import the notebook into the started instance.
+3. Upload the preprocessed data to the bucket.
+5. Changed the file path if required for both input and output.
+6. Run all cells
+7. Check displayed results throughout the process.
+
+### Result of Model Training, Evaluation, Prediction
+1. Outputs displayed by cells.
+2. Accuracy, F1 scores, and the Confusion Matrix are evaluated for each model trained.
+3. Cross-comparison between three metrics on the models.
+4. Confusion Matrix and comparison are represented as graphs.
+5. Feature Importance shown as a graph for the best model
+
+### Explanation of results
