@@ -156,3 +156,24 @@ Input and Output are stored in the Google Cloud Storage Bucket.
 
 ### Explanation of Model Training and Evaluation Results
 **Step Taken for Model Training and Evaluation:**
+1. **Load Preprocessed Data**
+   * Read in ```.parquet``` files into pyspark dataframes
+1. **Feature Preprocessing and Standardization**
+   * Clean all the features, including removing nulls and filtering invalid data
+   * Encoding Categorical data
+   * Feature vector assembly
+   * Standardization for feature vector
+1. **Train/Test Data Split**
+   * Split the data into two datasets
+     * 80% training
+     * 20% testing
+     * Random State = 42
+1. **Train & Evaluate Random Forest Model**
+   * Setup Random Forest Model
+     * numTrees = 200
+     * maxDepth = 12
+     * Random State = 42
+   * Fit the model with the train data
+   * Test the fitted model with the test data and generate a prediction list for evaluation
+   * Evaluate the model using Accuracy and F1 scores.
+  
