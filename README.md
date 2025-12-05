@@ -147,7 +147,7 @@ Input and Output are stored in the Google Cloud Storage Bucket.
 6. Run all cells
 7. Check displayed results throughout the process.
 
-### Result of Model Training, Evaluation, Prediction
+### Result of Model Training, Evaluation
 1. Outputs displayed by cells.
 2. Accuracy, F1 scores, and the Confusion Matrix are evaluated for each model trained.
 3. Cross-comparison between three metrics on the models.
