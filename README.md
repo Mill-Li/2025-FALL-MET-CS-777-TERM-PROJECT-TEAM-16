@@ -16,15 +16,17 @@ This Step in the project requires no local environment setup.
 All code runs in the following environment:
 
 **Databricks Serverless Notebook Compute**
-* Environment: Databricks Serverless Notebook Compute
-* Environment Version: 4
-* Apache Spark Version: 4.0.0
-* Language: Python(PySpark)
+* **Environment:** Databricks Serverless Notebook Compute
+* **Environment Version:** 4
+* **Apache Spark Version:** 4.0.0
+* **Language:** Python(PySpark)
 
 **Required Library**
 
 All required library is included in Databricks Runtime:
 * PySpark
+
 **File Storage**
 
-Input and output data is store in 
+Input and output data are stored in
+```/Volumes/workspace/default/metcs777termproject```
