@@ -9,7 +9,7 @@ The expected outcome is an end-to-end big data analytics framework capable of ac
 
 # Code Documentation
 ## Data Preprocessing
-['Open the preprocessing notebook'](./TERM PROJECT/CODE/Data_Preprocessing.ipynb)
+[Open the preprocessing notebook](./TERM%20PROJECT/CODE/Data_Preprocessing.ipynb)
 ### Environment Setup
 This Step in the project requires no local environment setup. 
 
