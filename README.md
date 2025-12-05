@@ -39,7 +39,7 @@ Input and output data are stored in ```/Volumes/workspace/default/metcs777termpr
 6. Final result generated after all cells finished and stored under the specified path
 
 ### Result of Preprocessing Step
-Two output folders contain parquets generated:
+Two output folders contain ```.parquet``` files generated:
 
 1. Labeled Aggregated Trajectory-level dataset
 2. Unlabeled Aggregated Trajectory-level dataset
@@ -73,4 +73,4 @@ Line 1 is a header.
 * Field 3: Transportation Mode
 
 #### Preprocessed Data
-Preprocessed Data is stored in ```.parquer``` file.
+Preprocessed Data is stored in ```.parquet``` file.
