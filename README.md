@@ -44,8 +44,8 @@ Two output folders contain ```.parquet``` files generated:
 1. Labeled Aggregated Trajectory-level dataset
 2. Unlabeled Aggregated Trajectory-level dataset
 
-### Explanation of the dataset
-#### Raw Data
+### Explanation of the Raw dataset
+
 The raw dataset contains 182 users' multiple trajectory files with GPS tracking points.
 
 Trajectory files are all in ```.plt``` format.
@@ -72,7 +72,7 @@ Line 1 is a header.
 * Field 2: End Time
 * Field 3: Transportation Mode
 
-#### Preprocessed Data
+### Explanation of the Preprocessed Result
 Preprocessed Data is stored in ```.parquet``` format.
 
 **Steps Taken for Preprocessing:**
