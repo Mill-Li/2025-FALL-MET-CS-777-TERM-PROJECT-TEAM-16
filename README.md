@@ -134,7 +134,7 @@ All code runs in the Google Cloud Platform environment:
     * Machine type: n4-standard-4
     * vCPU: 4 vCPUs
     * Memory: 16 GB RAM
-    * Boot Disk: 200 GB SSD (Hyperdisk Balance
+    * Boot Disk: 200 GB SSD (Hyperdisk Balanced)
 
 **Required Library**
 
