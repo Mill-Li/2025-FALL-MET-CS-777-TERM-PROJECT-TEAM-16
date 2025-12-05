@@ -9,6 +9,7 @@ The expected outcome is an end-to-end big data analytics framework capable of ac
 
 # Code Documentation
 ## Data Preprocessing
+[Open the preprocessing notebook](TERM PROJECT/CODE/Data_Preprocessing.ipynb)
 ### Environment Setup
 This Step in the project requires no local environment setup. 
 
@@ -20,7 +21,9 @@ All code runs in Databricks with the following environment:
 * Language: Python(PySpark)
 
 **Required Library**
+
 All required library is included in Databricks Runtime:
 * PySpark
 **File Storage**
-Input
+
+Input and output data is store in 
