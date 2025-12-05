@@ -28,5 +28,12 @@ All required library is included in Databricks Runtime:
 
 **File Storage**
 
-Input and output data are stored in
-```/Volumes/workspace/default/metcs777termproject```
+Input and output data are stored in ```/Volumes/workspace/default/metcs777termproject``` in Databricks Free Edition
+
+### How to Run the Code
+1. Import the Preprocessing Notebook into Databricks Workspace
+2. Upload the required raw data onto Databricks Volume
+3. Change the file path if required for both input and output
+4. Run all cells with the serverless notebook compute
+5. Temporary Views would be generated throughout the steps
+6. Final result generated after all cells finished and stored under the specified path
