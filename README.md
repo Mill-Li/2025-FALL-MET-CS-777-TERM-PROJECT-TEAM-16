@@ -85,4 +85,15 @@ Preprocessed Data is stored in ```.parquet``` format.
    * Parse Timestamps
    * Assign Traj_id and User_id based on path
 3. Feature Engineering
-   * $\Delta$ T
+   * $\Delta$ t(Changing time between steps/records)
+   * Haversine Distance between steps/records
+   * Speed and Acceleration based on distance and time
+   * Stop duration per steps/records
+4. Mode Assignment
+   * Merge with the provided mode data
+5. Trajectory Aggregation
+   Using PySpark:
+   * groupBy (user_id, traj_id, mode) or (user_id, traj_id)
+   * Calculate descriptive statistics
+   * Filter out invalid segments
+6. Save Final Output as ```.parquet```
