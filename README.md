@@ -140,8 +140,8 @@ Input and Output are stored in the Google Cloud Storage Bucket.
 
 ### How to Run the Code
 1. Start an instance on GCP.
-2. Import the notebook into the started instance.
-3. Upload the preprocessed data to the bucket.
+2. Import the [notebook](./TERM%20PROJECT/CODE/model.ipynb) into the started instance.
+3. Upload the [preprocessed data](./TERM%20PROJECT/RESULT/PREPROCESSED%20RESULT/) to the bucket.
 5. Changed the file path if required for both input and output.
 6. Run all cells
 7. Check displayed results throughout the process.
