@@ -115,7 +115,7 @@ Preprocessed Data is stored in ```.parquet``` format.
 - **duration_seconds:** Total duration of the trajectory (seconds).
 - **mean_speed_calculated:** Total distance divided by duration (m/s), computed feature.
 
-## Model Training, Evaluation, Prediction
+## Model Training, Evaluation
 [Model Notebook](./TERM%20PROJECT/CODE/Geolife_Mode_Classification.py)
 ### Environment Setup
 This Step in the project requires no local environment setup.
