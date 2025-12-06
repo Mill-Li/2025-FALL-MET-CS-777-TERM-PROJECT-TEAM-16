@@ -157,9 +157,10 @@ Input and Output are stored in the Google Cloud Storage Bucket.
 
 ### Result of Model Training, Evaluation
 1. Outputs saved as ```.csv``` or ```.png``` files.
-2. The Confusion Matrix is evaluated for each model trained, results are saved as graphs.
-3. Cross-comparison between three metrics on the models saved as ```.csv```.
-4. Feature Importance is saved as a graph for the best model.
+2. The Confusion Matrix is evaluated for each model trained, results are saved as [graphs](./TERM%20PROJECT/RESULT/FINAL%20RESULT/ConfusionMatrix).
+3. Cross-comparison between three metrics on the models saved as [file](./TERM%20PROJECT/RESULT/FINAL%20RESULT/ModelMetric).
+4. Cross-comparison plotted and saved as [separate graphs](./TERM%20PROJECT/RESULT/FINAL%20RESULT/ModelComparison).
+5. Feature Importance is saved as a [graph](./TERM%20PROJECT/RESULT/FINAL%20RESULT/FeatureImportance) for the best model.
 
 ### Explanation of Model Training and Evaluation Results
 **Step Taken for Model Training and Evaluation:**
