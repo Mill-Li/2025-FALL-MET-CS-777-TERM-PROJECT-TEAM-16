@@ -1,5 +1,7 @@
 # 2025-FALL-MET-CS-777-TERM-PROJECT-TEAM-16
 Term Project at Boston University
+
+Team Member: Tingchen Li, Kangjin Wang
 # Transportation Mode Recognition Using Apache Spark and Machine Learning
 The primary objective of this term project is to design and implement a large-scale transportation mode recognition system using the Microsoft Research Asia Geolife GPS Trajectory Dataset. This dataset contains over 17,000 trajectories collected from 182 users between April 2007 and August 2012, covering a total distance of 1.29 million kilometers and more than 50,000 hours of movement. Each trajectory is a sequence of time-stamped GPS points with information on latitude, longitude, altitude, and time, capturing diverse user activities such as walking, cycling, driving, and flying.
 
