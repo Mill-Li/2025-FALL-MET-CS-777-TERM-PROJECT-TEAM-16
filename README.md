@@ -151,17 +151,15 @@ Input and Output are stored in the Google Cloud Storage Bucket.
 ### How to Run the Code
 1. Start an instance on GCP.
 2. Import the [Python File](./TERM%20PROJECT/CODE/Geolife_Mode_Classification.py) into the started instance.
-3. Upload the [preprocessed data](./TERM%20PROJECT/RESULT/PREPROCESSED%20RESULT/) to the bucket.
-5. Changed the file path if required for both input and output.
-6. Run all cells
-7. Check displayed results throughout the process.
+3. Upload the [Preprocessed Data](./TERM%20PROJECT/RESULT/PREPROCESSED%20RESULT/) to the bucket.
+4. Submit a task with the corresponding system argument declaring Python files, the data files, and the output path
+5. Check output directory for results after task finishes.
 
 ### Result of Model Training, Evaluation
-1. Outputs displayed by cells.
-2. Accuracy, F1 scores, and the Confusion Matrix are evaluated for each model trained.
-3. Cross-comparison between three metrics on the models.
-4. Confusion Matrix and comparison are represented as graphs.
-5. Feature Importance shown as a graph for the best model
+1. Outputs saved as ```.csv``` or ```.png``` files.
+2. The Confusion Matrix is evaluated for each model trained, results are saved as graphs.
+3. Cross-comparison between three metrics on the models saved as ```.csv```.
+4. Feature Importance is saved as a graph for the best model.
 
 ### Explanation of Model Training and Evaluation Results
 **Step Taken for Model Training and Evaluation:**
@@ -203,15 +201,14 @@ Input and Output are stored in the Google Cloud Storage Bucket.
    * Fit the one vs rest model with the train data
    * Test the fitted model with the test data and generate a prediction list for evaluation
    * Evaluate the model using Accuracy and F1 scores.
-7. **Build multiclass Confusion Matrix for models**
+7. **Build and plot multiclass Confusion Matrix for models**
    * Import MulticlassMetrics from pyspark.mllib.evaluation
    * Create a self-defined function to create a Confusion Matrix
    * Generate matrix for all three models
+   * Using seaborn and matplotlib to generate a visualization of the confusion matrix
 8. **Cross Comparison on Accuracy and F1 Score**
    * Simply build a pandas dataframe to print the result
-9. **Plot the Confusion Matrix for models**
-   * Using seaborn and matplotlib to generate a visualization of the confusion matrix
-10. **Plot the Accuracy Comparison and F1 Score Comparison Seperately**
+9. **Plot the Accuracy Comparison and F1 Score Comparison Seperately**
     * Using seaborn and matplotlib to generate a visualization for each comparison in a bar graph.
-11. **Plot the feature importance of the best model**
+10. **Plot the feature importance for the best model**
     * Using matplotlib to generate a visualization for the feature importance of the best model.
