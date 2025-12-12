@@ -1,18 +1,17 @@
-# 2025-FALL-MET-CS-777-TERM-PROJECT-TEAM-16
+# Transportation Mode Recognition Using Apache Spark and Machine Learning
 Term Project at Boston University
 
 Team Member: Tingchen Li, Kangjin Wang
-# Transportation Mode Recognition Using Apache Spark and Machine Learning
+# Introduction
 The primary objective of this term project is to design and implement a large-scale transportation mode recognition system using the Microsoft Research Asia Geolife GPS Trajectory Dataset. This dataset contains over 17,000 trajectories collected from 182 users between April 2007 and August 2012, covering a total distance of 1.29 million kilometers and more than 50,000 hours of movement. Each trajectory is a sequence of time-stamped GPS points with information on latitude, longitude, altitude, and time, capturing diverse user activities such as walking, cycling, driving, and flying.
 
 Using Apache Spark as the core computational platform, this project aims to develop a distributed machine learning pipeline for classifying different transportation modes based on spatiotemporal features, including speed, acceleration, altitude variation, and stop duration. Models including Random Forest, Gradient-Boosted Trees, and Logistic Regression will be implemented using Spark MLlib, enabling efficient processing and scalable classification of millions of GPS data points
 
 The expected outcome is an end-to-end big data analytics framework capable of accurately identifying transportation modes and visualizing their spatial distribution. This work contributes to real-world applications in urban mobility analysis, intelligent transportation systems, and smart city development, while demonstrating strong technical depth in big data processing and distributed machine learning.
 
-# Code Documentation
-## Data Preprocessing
+# Data Preprocessing
 [Preprocessing Notebook](./TERM%20PROJECT/CODE/Data_Preprocessing.ipynb)
-### Environment Setup
+## Environment Setup
 This Step in the project requires no local environment setup. 
 
 All code runs in the following environment:
@@ -32,7 +31,7 @@ All required library is included in the Databricks Serverless Notebook:
 
 Input and output data are stored in ```/Volumes/workspace/default/metcs777termproject``` in Databricks Free Edition
 
-### How to Run the Code
+## How to Run the Code
 1. Import the [Preprocessing Notebook](./TERM%20PROJECT/CODE/Data_Preprocessing.ipynb) into Databricks Workspace
 2. Upload the [raw data](./TERM%20PROJECT/DATA/) to Databricks Volume
 3. Change the file path if required for both input and output
@@ -40,13 +39,13 @@ Input and output data are stored in ```/Volumes/workspace/default/metcs777termpr
 5. Temporary Views would be generated throughout the steps
 6. Final result generated after all cells finished and stored under the specified path
 
-### Result of Preprocessing Step
+## Result of Preprocessing Step
 Two output folders contain ```.parquet``` files generated:
 
 1. Labeled Aggregated Trajectory-level dataset
 2. Unlabeled Aggregated Trajectory-level dataset
 
-### Explanation of the Raw dataset
+## Explanation of the Raw dataset
 
 The raw dataset contains 182 users' multiple trajectory files with GPS tracking points.
 
@@ -74,7 +73,7 @@ Line 1 is a header.
 * Field 2: End Time
 * Field 3: Transportation Mode
 
-### Explanation of the Preprocessed Result
+## Explanation of the Preprocessed Result
 Preprocessed Data is stored in ```.parquet``` format.
 
 **Steps Taken for Preprocessing:**
@@ -117,9 +116,9 @@ Preprocessed Data is stored in ```.parquet``` format.
 - **duration_seconds:** Total duration of the trajectory (seconds).
 - **mean_speed_calculated:** Total distance divided by duration (m/s), computed feature.
 
-## Model Training, Evaluation
+# Model Training, Evaluation
 [Model Notebook](./TERM%20PROJECT/CODE/Geolife_Mode_Classification.py)
-### Environment Setup
+## Environment Setup
 This Step in the project requires no local environment setup.
 
 All code runs in the Google Cloud Platform environment:
@@ -150,21 +149,21 @@ Libraries are selected and installed when creating the instance.
 
 Input and Output are stored in the Google Cloud Storage Bucket.
 
-### How to Run the Code
+## How to Run the Code
 1. Start an instance on GCP.
 2. Import the [Python File](./TERM%20PROJECT/CODE/Geolife_Mode_Classification.py) into the started instance.
 3. Upload the [Preprocessed Data](./TERM%20PROJECT/RESULT/PREPROCESSED%20RESULT/) to the bucket.
 4. Submit a task with the corresponding system argument declaring Python files, the data files, and the output path
 5. Check output directory for results after task finishes.
 
-### Result of Model Training, Evaluation
+## Result of Model Training, Evaluation
 1. Outputs saved as ```.csv``` or ```.png``` files.
 2. The Confusion Matrix is evaluated for each model trained, results are saved as [graphs](./TERM%20PROJECT/RESULT/FINAL%20RESULT/ConfusionMatrix).
 3. Cross-comparison between three metrics on the models saved as [file](./TERM%20PROJECT/RESULT/FINAL%20RESULT/ModelMetric).
 4. Cross-comparison plotted and saved as [separate graphs](./TERM%20PROJECT/RESULT/FINAL%20RESULT/ModelComparison).
 5. Feature Importance is saved as a [graph](./TERM%20PROJECT/RESULT/FINAL%20RESULT/FeatureImportance) for the best model.
 
-### Explanation of Model Training and Evaluation Results
+## Explanation of Model Training and Evaluation Results
 **Step Taken for Model Training and Evaluation:**
 1. **Load Preprocessed Data**
    * Read in ```.parquet``` files into pyspark dataframes
@@ -215,3 +214,5 @@ Input and Output are stored in the Google Cloud Storage Bucket.
     * Using seaborn and matplotlib to generate a visualization for each comparison in a bar graph.
 10. **Plot the feature importance for the best model**
     * Using matplotlib to generate a visualization for the feature importance of the best model.
+
+# Result
