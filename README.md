@@ -66,10 +66,22 @@ Line 1 is a header.
 
 ```2008/08/20 13:13:59	2008/08/20 13:24:23	walk```
 
+# Methodology
+As the raw data contains GPS points only, we need to transfer the coordinates to analyzable numerical features, like speed, distance, and acceleration, for model training.
 
-# Data Preprocessing & Feature Extraction
+While the trajectories are using timestamps, the label files are using time intervals, which need to be rematched for later training. 
+
+As a result, data preprocessing plays an important role in our project. 
+
+The detailed approaches of our whole project are shown below.
+
+[Data Preprocessing & Feature Extraction](#data-preprocessing--feature-extraction)
+
+[Model Training & Evaluation](#model-training--evaluation)
+
+## Data Preprocessing & Feature Extraction
 [Preprocessing Notebook](./TERM%20PROJECT/CODE/Data_Preprocessing.ipynb)
-## Environment Setup
+### Environment Setup
 This Step in the project requires no local environment setup. 
 
 All code runs in the following environment:
@@ -88,7 +100,7 @@ All required library is included in the Databricks Serverless Notebook:
 **File Storage**
 
 Input and output data are stored in ```/Volumes/workspace/default/metcs777termproject``` in Databricks Free Edition
-## How to Run the Code
+### How to Run the Code
 1. Import the [Preprocessing Notebook](./TERM%20PROJECT/CODE/Data_Preprocessing.ipynb) into Databricks Workspace
 2. Upload the [raw data](./TERM%20PROJECT/DATA/) to Databricks Volume
 3. Change the file path if required for both input and output
@@ -96,7 +108,7 @@ Input and output data are stored in ```/Volumes/workspace/default/metcs777termpr
 5. Temporary Views would be generated throughout the steps
 6. Final result generated after all cells finished and stored under the specified path
 
-## Steps Taken for Preprocessing & Feature Extraction
+### Steps Taken for Preprocessing & Feature Extraction
 1. **Load Raw Files**
    * Recursively load ```.plt``` files from directories
    * Parse Timestamps and GPS points
@@ -118,13 +130,13 @@ Input and output data are stored in ```/Volumes/workspace/default/metcs777termpr
    * Filter out invalid segments
 6. **Save Final Output as** ```.parquet```
 
-## Result of the Step
+### Result of the Step
 Two output folders contain ```.parquet``` files generated:
 
 1. Labeled Aggregated Trajectory-level dataset
 2. Unlabeled Aggregated Trajectory-level dataset
 
-## Explanation of the Preprocessed & Feature Extraction Result
+### Explanation of the Preprocessed & Feature Extraction Result
 Preprocessed Data is stored in ```.parquet``` format.
 
 **Result Explanation**
@@ -143,10 +155,10 @@ Preprocessed Data is stored in ```.parquet``` format.
 - **duration_seconds:** Total duration of the trajectory (seconds).
 - **mean_speed_calculated:** Total distance divided by duration (m/s), computed feature.
 
-# Model Training, Evaluation
+## Model Training & Evaluation
 [Model Notebook](./TERM%20PROJECT/CODE/Geolife_Mode_Classification.py)
 
-## Environment Setup
+### Environment Setup
 This Step in the project requires no local environment setup.
 
 All code runs in the Google Cloud Platform environment:
@@ -177,14 +189,14 @@ Libraries are selected and installed when creating the instance.
 
 Input and Output are stored in the Google Cloud Storage Bucket.
 
-## How to Run the Code
+### How to Run the Code
 1. Start an instance on GCP.
 2. Import the [Python File](./TERM%20PROJECT/CODE/Geolife_Mode_Classification.py) into the started instance.
 3. Upload the [Preprocessed Data](./TERM%20PROJECT/RESULT/PREPROCESSED%20RESULT/) to the bucket.
 4. Submit a task with the corresponding system argument declaring Python files, the data files, and the output path
 5. Check output directory for results after task finishes.
 
-## Step Taken for Model Training and Evaluation
+### Step Taken for Model Training and Evaluation
 1. **Load Preprocessed Data**
    * Read in ```.parquet``` files into pyspark dataframes
 2. **Feature Preprocessing and Standardization**
@@ -235,14 +247,14 @@ Input and Output are stored in the Google Cloud Storage Bucket.
 10. **Plot the feature importance for the best model**
     * Using matplotlib to generate a visualization for the feature importance of the best model.
 
-## Result of Model Training, Evaluation
+### Result of Model Training, Evaluation
 1. Outputs saved as ```.csv``` or ```.png``` files.
 2. The Confusion Matrix is evaluated for each model trained, results are saved as [graphs](./TERM%20PROJECT/RESULT/FINAL%20RESULT/ConfusionMatrix).
 3. Cross-comparison between three metrics on the models saved as [file](./TERM%20PROJECT/RESULT/FINAL%20RESULT/ModelMetric).
 4. Cross-comparison plotted and saved as [separate graphs](./TERM%20PROJECT/RESULT/FINAL%20RESULT/ModelComparison).
 5. Feature Importance is saved as a [graph](./TERM%20PROJECT/RESULT/FINAL%20RESULT/FeatureImportance) for the best model.
 
-## Explanation of Model Training and Evaluation Results
+### Explanation of Model Training and Evaluation Results
 It comes out that under our current preprocessing pipeline and feature engineering, Random Forest outperforms GBT and Logistic Regression on the transportation modes classification task. While the GBT gets a very close score to Random Forest, the training cost and the tuning cost make it less preferred. While Logistic Regression shows a significantly lower performance,  the main reason might be its limited ability to capture non-linear relationships in our mobility data. 
 
 According to the result of the Random Forest model, the top three features among all selected features are the median speed, the variance of speed, and the calculated average speed. This suggests that these three features should be considered most while doing mobility pattern analytics.
