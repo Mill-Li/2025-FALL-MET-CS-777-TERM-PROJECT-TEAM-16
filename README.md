@@ -67,15 +67,22 @@ Line 1 is a header.
 ```2008/08/20 13:13:59	2008/08/20 13:24:23	walk```
 
 # Methodology
-As the raw data contains GPS points only, we need to transfer the coordinates to analyzable numerical features, like speed, distance, and acceleration, for model training.
+As the raw data contains GPS data only, the coordinates in the GPS data need to be transformed to analyzable numerical features, like speed, distance, and acceleration, for model training.
 
 While the trajectories are using timestamps, the label files are using time intervals, which need to be rematched for later training. 
 
 As a result, data preprocessing plays an important role in our project. 
 
-The detailed approaches of our whole project are shown below.
-
 [Data Preprocessing & Feature Extraction](#data-preprocessing--feature-extraction)
+
+
+For the models part, accuracy and weighted F1 scores are selected as the primary performance metrics.
+* Accuracy provides an overall measure of correctness
+* Weighted F1 scores accounting for class imbalance, which is preferable according to our dataset spread.
+
+Logistic Regression is chosen as a baseline, since it is fast and interpretable. 
+
+Random Forest and Gradient-Boosted Trees are chosen to dive deeper in seeking better accuracy and F1-scores.
 
 [Model Training & Evaluation](#model-training--evaluation)
 
@@ -255,7 +262,7 @@ Input and Output are stored in the Google Cloud Storage Bucket.
 5. Feature Importance is saved as a [graph](./TERM%20PROJECT/RESULT/FINAL%20RESULT/FeatureImportance) for the best model.
 
 ### Explanation of Model Training and Evaluation Results
-It comes out that under our current preprocessing pipeline and feature engineering, Random Forest outperforms GBT and Logistic Regression on the transportation modes classification task. While the GBT gets a very close score to Random Forest, the training cost and the tuning cost make it less preferred. While Logistic Regression shows a significantly lower performance,  the main reason might be its limited ability to capture non-linear relationships in our mobility data. 
+It comes out that under our current preprocessing pipeline and feature engineering, Random Forest outperforms GBT and Logistic Regression on the transportation modes classification task. While the GBT gets a very close score to Random Forest, the training cost and the tuning cost make it less preferred. Although Logistic Regression shows a significantly lower performance, the main reason might be its limited ability to capture non-linear relationships in our mobility data. 
 
 According to the result of the Random Forest model, the top three features among all selected features are the median speed, the variance of speed, and the calculated average speed. This suggests that these three features should be considered most while doing mobility pattern analytics.
 # Conclusion
