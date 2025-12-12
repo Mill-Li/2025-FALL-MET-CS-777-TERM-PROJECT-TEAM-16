@@ -261,11 +261,35 @@ Input and Output are stored in the Google Cloud Storage Bucket.
 4. Cross-comparison plotted and saved as [separate graphs](./TERM%20PROJECT/RESULT/FINAL%20RESULT/ModelComparison).
 5. Feature Importance is saved as a [graph](./TERM%20PROJECT/RESULT/FINAL%20RESULT/FeatureImportance) for the best model.
 
-### Explanation of Model Training and Evaluation Results
-It comes out that under our current preprocessing pipeline and feature engineering, Random Forest outperforms GBT and Logistic Regression on the transportation modes classification task. While the GBT gets a very close score to Random Forest, the training cost and the tuning cost make it less preferred. Although Logistic Regression shows a significantly lower performance, the main reason might be its limited ability to capture non-linear relationships in our mobility data. 
+# Result
+## Explanation of final results
+We conducted a comprehensive comparison of the three models under the same training set, test set, and the same feature selection. The results show that these models have their own advantages and disadvantages in different aspects. 
+* Random Forest model performed best in terms of Accuracy and F1 Score in our results, reaching 0.8394 and 0.8386, and it can handle nonlinear features well.
+* Logistic Regression, as a baseline of our choice, has the most stable overall performance, and can still maintain stable performance under the condition of low training cost, but its performance in prediction is very limited, and it is difficult to deal with nonlinear mobility patterns.
+* Gradient-Boosted Trees, which is the most complex and costly model among the three, trains more slowly and requires careful parameter tuning, and performs better in some categories. Yet, the separability of different labels of transportation modes is very different in terms of the categories of the data itself. 
 
-According to the result of the Random Forest model, the top three features among all selected features are the median speed, the variance of speed, and the calculated average speed. This suggests that these three features should be considered most while doing mobility pattern analytics.
+In our study, we found two pairs of transportation modes that are particularly prone to misclassification. The first is Walking and Running, which are misclassified mainly due to similar short-range speed fluctuation patterns. The second is Bike and Bus, because both show medium-speed segments and intermittent stops. In our final Feature Importance analysis, we found that speed and distance-related features contributed the most to the classification results, including median_speed, var_speed, and total_distance.
+
+## Pros/Cons
+In our project, we used Spark to distribute and process the large-scale GeoLife GPS Trajectory Dataset, which enabled our project to be completed efficiently and accurately. In addition, we used a variety of prediction models for comparison. This comparative experiment helped us to observe the advantages of different models in that part, so that we can comprehensively evaluate the characteristics of these three different algorithms. Finally, we saved the results of the Accuracy and the F1 Score, and made a lot of visual analysis, including performance comparison, Confusion Matrix, and importance analysis of each feature. These can help us better analyze and display in the future, and can specifically understand the pattern of misclassification in the training process, and enhance the interpretability of the model.
+
+There are also some shortcomings in our project. First of all, the data set is imbalanced, which will affect the recognition effect of the traffic mode in the prediction process. And in the data, GPS signals contain a lot of noise and inconsistent sampling rates, all impacting speed and acceleration accuracy. Finally, for our Gradient-Boosted Trees, as mentioned before, this model requires a lot of training costs and is more sensitive to resources and parameters. If you want this model to perform better, you need to spend more time training it. Moreover, in the whole project, the prediction of the traffic type is only based on the features of the traffic itself, and the individual differences of users are not considered.
+
+## Recommendation
+In response to the shortcomings found in our project, we can make the following improvements later. 
+
+First, for the problem of unbalanced data sets, we can use SMOTE or stratified sampling to improve to avoid the impact of this part on the results.
+
+On the other hand, since the number of features currently used is not comprehensive enough, we should introduce more different types of features to help predict and improve the model's ability to distinguish. 
+
+In terms of models, due to the limited resource allocation, we did not expand more types of models for comparative analysis. In the next step, we can choose some deep learning models, such as RNN and LSTM, for sequential GPS data.
+
 # Conclusion
+In this project, our main goal is to complete a complete end-to-end transportation mode recognition system, and use the original GPS data for distributed computing processes and for different model evaluations. And the final results show that Spark has obvious advantages in large-scale trajectory data processing and modeling. 
+
+In this project, we have learned a lot. For example, in the data preprocessing and cleaning part, we found that whether the data is cleaned or not has a significant impact on the subsequent model training, and the training difficulty and model performance will be affected. And for feature selection part, a good feature selection can make the model better learn and predict the data, which is also a very important point. 
+
+After completing the entire project, we also need to build a reproducible and scalable pipeline, which is of great help to the follow-up work. In general, we have a complete practice of how to complete a recognition system through this project.
 
 # Contributions
 Tingchen Li
