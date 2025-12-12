@@ -10,6 +10,8 @@ Our project focuses on classifying the transportation modes of large-scale traje
 
 # Dataset
 
+For the selection of the data set, the Microsoft Research Asia Geolife project contains rich movement signals such as speed, acceleration and stop patterns, which are important and high-quality data for our traffic pattern prediction. And this large-scale data is very suitable for distributed computing.
+
 The raw dataset was collected in the Microsoft Research Asia Geolife project by 182 users. 
 
 Each GPS trajectory in this dataset is represented by a sequence of time-stamped points.
